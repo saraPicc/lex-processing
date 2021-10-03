@@ -41,9 +41,11 @@ joined_df = cleaned_transc.join(freq_lang.set_index('word'), on='word', how='lef
 # Remove when no frequency exist
 joined_df = joined_df.dropna()
 # Sort
-joined_df=joined_df.sort_values(by=['freq'],ascending=False)
+joined_df=joined_df.sort_values(by=['freq'], ascending=False)
 
 # Print transcriptions as a list
-print(joined_df['transcription'].tolist())
+transcr_list = joined_df['transcription'].tolist()
+print(len(transcr_list))
 # Get all word with freq greater than X
 #high_freq_df  = joined_df[joined_df['freq']<=30]
+
